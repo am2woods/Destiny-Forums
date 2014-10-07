@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="CSS.css"/>
+	</head>
+	<body>
+		<div class="container">
+		
+			<div class="header">
+				<center>
+					<a href="index.html">
+						<img src="images/banner1.png" alt="Banner"/>
+					</a>
+				</center>
+				
+					<div id="category-menu">
+						<center>
+							<ul>
+								<li>
+									<a style="color:#fff" href="#">Home</a>
+								</li>
+								<li>|</li>
+								<li>
+									<a style="color:#fff" href="#">Forums</a>
+								</li>
+								<li>|</li>
+								<li>
+									<a style="color:#fff" href="#">Streams</a>
+								</li>
+								<li>|</li>
+								<li>
+									<a style="color:#fff" href="#">Guides</a>
+								</li>
+								<li>|</li>
+								<li>
+									<a style="color:#fff" href="#">Media</a>
+								</li>
+							</ul>
+						</center>
+					</div>
+					
+					<!--<table class="navi">
+						<tr>
+							<td>
+								<a href="index.html">
+									<img src="images/home_button.png" alt="home" onmouseover="this.src='images/home_button_on.png'" onmouseout="this.src='images/home_button.png'" />
+								</a>
+							</td>
+							<td>
+								<img src="images/forums_button_off.png" alt="forums" onmouseover="this.src='images/forums_button_on.png'" onmouseout="this.src='images/forums_button_off.png'"/>
+							</td>
+							<td>
+								<img src="images/streams_button_off.png" alt="streams" onmouseover="this.src='images/streams_button_on.png'" onmouseout="this.src='images/streams_button_off.png'"/>
+							</td>
+							<td>
+								<img src="images/guides_button_off.png" alt="guides" onmouseover="this.src='images/guides_button_on.png'" onmouseout="this.src='images/guides_button_off.png'"/>
+							</td>
+							<td>
+								<img src="images/media_button_off.png" alt="media" onmouseover="this.src='images/media_button_on.png'" onmouseout="this.src='images/media_button_off.png'"/>
+							</td>
+						</tr>
+					</table>-->
+	
+			</div>
+		
+			<div class="content">
+			</div>
+			
+			<div class="sidebar">	
+			
+				<div class="livestreams">
+					<img src="images/stream_bar_hd.png" alt="Live Streams" />
+					
+					<div class="subcontent">
+						<p>
+							<?php
+								$json_array = json_decode(file_get_contents("https://api.twitch.tv/kraken/streams/morninafterkill"), true);
+			
+			
+								if ($json_array['stream']['name'] == "morninafterkill") 
+									{echo "<a href=http://www.twitch.tv/morninafterkill><img src='images/online.png'></a>";}
+								else 
+									{echo "<a href=http://www.twitch.tv/morninafterkill><img src='images/offline.png'></a>";}
+							?>
+						
+						<!--</p>
+						<p>This side bar will contain live stream postings</p>
+						<p>As well as which streams are offline
+						</p>-->
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>

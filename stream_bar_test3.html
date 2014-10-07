@@ -1,0 +1,18 @@
+	<!DOCTYPE html>
+	<html>
+	
+		<body>
+		
+			<?php
+				$json_array = json_decode(file_get_contents("https://api.twitch.tv/kraken/streams/morninafterkill"), true);
+			
+			
+				if ($json_array['stream']['name'] == "morninafterkill") 
+					{echo "<a href=http://www.twitch.tv/morninafterkill><img src='images/online.png'></a>";}
+				else 
+					{echo "<a href=http://www.twitch.tv/morninafterkill><img src='images/offline.png'></a>";}
+			?>
+			
+		</body>
+		
+	</html>
